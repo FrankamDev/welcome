@@ -1,110 +1,201 @@
 
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { Heart } from 'lucide-react';
-import './hero.css'
-function Hero() {
-  const containerRef = useRef(null);
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
-  const particlesRef = useRef(null);
+// import { useEffect, useRef } from 'react';
+// import gsap from 'gsap';
+// import { Heart } from 'lucide-react';
+// import './hero.css'
+// function Hero() {
+//   const containerRef = useRef(null);
+//   const imageRef = useRef(null);
+//   const contentRef = useRef(null);
+//   const particlesRef = useRef(null);
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-
-  //   // 1. Animation des particules de fond (Bokeh)
-  //   gsap.to(".particle", {
-  //     y: "-100vh",
-  //     x: "random(-50, 50)",
-  //     opacity: "random(0.1, 0.5)",
-  //     duration: "random(10, 20)",
-  //     repeat: -1,
-  //     stagger: { each: 0.2, from: "random" },
-  //     ease: "none"
-  //   });
-
-  //   // 2. Révélation de l'image (Scale + Reveal)
-  //   tl.fromTo(imageRef.current, 
-  //     { clipPath: "inset(100% 0% 0% 0%)", scale: 1.2 },
-  //     { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 2, ease: "expo.inOut" }
-  //   );
-
-  //   // 3. Entrée du texte coordonnée
-  //   tl.from(".reveal-text", {
-  //     y: 80,
-  //     opacity: 0,
-  //     rotateX: -45,
-  //     stagger: 0.2,
-  //     duration: 1.5,
-  //   }, "-=1");
-
-  //   // 4. Lignes décoratives s'étirant depuis le centre
-  //   tl.fromTo(".line-deco", 
-  //     { scaleX: 0 }, 
-  //     { scaleX: 1, duration: 1.5, stagger: 0.2 }, 
-  //     "-=1"
-  //   );
-
-  //   // 5. Pulse infini du coeur
-  //   gsap.to(".heart-icon", {
-  //     scale: 1.2,
-  //     repeat: -1,
-  //     yoyo: true,
-  //     ease: "heartbeat", // On peut simuler un battement
-  //     duration: 0.8
-  //   });
-
-  // }, []);
-useEffect(() => {
-  // 1. Créer le contexte
-  let ctx = gsap.context(() => {
+  
+// useEffect(() => {
+//   // 1. Créer le contexte
+//   let ctx = gsap.context(() => {
     
-    // Tout ton code GSAP doit être ICI
-    gsap.fromTo(".hero-title-name", 
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1 }
-    );
+//     // Tout ton code GSAP doit être ICI
+//     gsap.fromTo(".hero-title-name", 
+//       { opacity: 0, y: 50 },
+//       { opacity: 1, y: 0, duration: 1 }
+//     );
 
-    // Même les ScrollTrigger
-    gsap.to(".photo-frame", {
-      scrollTrigger: {
-        trigger: ".photo-frame",
-        start: "top center",
-        scrub: true
+//     // Même les ScrollTrigger
+//     gsap.to(".photo-frame", {
+//       scrollTrigger: {
+//         trigger: ".photo-frame",
+//         start: "top center",
+//         scrub: true
+//       },
+//       y: -100
+//     });
+
+//   }, containerRef); 
+
+
+//   return () => ctx.revert(); 
+// }, []);
+//   return (
+//     <section
+//       ref={containerRef}
+//       className="relative hero min-h-screen flex items-center justify-center overflow-hidden bg-[#FAF9F6]"
+//     >
+   
+//       <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
+//         {[...Array(20)].map((_, i) => (
+//           <div 
+//             key={i} 
+//             className="particle absolute bottom-0 w-2 h-2 bg-beige-400 rounded-full blur-sm bg-orange-200/40"
+//             style={{ left: `${Math.random() * 100}%` }}
+//           />
+//         ))}
+//       </div>
+
+//       <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center">
+        
+//         {/* Cadre Image Premium */}
+//         <div className="relative group mb-12">
+//           <div 
+//             ref={imageRef}
+//             className="relative w-64 h-80 sm:w-80 sm:h-[32rem] rounded-t-full overflow-hidden shadow-2xl border-[12px] border-white"
+//           >
+//             <img
+//               src="/b1.jpeg"
+//               alt="Mariage"
+//               className="w-full h-full object-cover"
+//             />
+//             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+//           </div>
+          
+//           {/* Badge Date flottant */}
+//           <div className="reveal-text absolute -bottom-6 -right-4 bg-white p-4 shadow-xl rounded-lg rotate-3">
+//              <p className="font-serif-premium text-gray-800 font-bold tracking-widest text-sm uppercase">Samedi</p>
+//              <p className="font-serif-premium text-2xl text-amber-800">10 Avril 2026</p>
+//           </div>
+//         </div>
+
+//         {/* Titre Principal */}
+//         <div ref={contentRef} className="text-center space-y-6">
+//           <h2 className="reveal-text font-serif-premium text-lg tracking-[0.3em] text-gray-500 uppercase">
+//             Célébration de l'Union
+//           </h2>
+          
+//           <h1 className="reveal-text font-script text-7xl sm:text-9xl text-gray-800 my-4 drop-shadow-sm">
+//             Clémence <span className="text-4xl sm:text-6xl align-middle font-serif-premium italic">&</span> Elias
+//           </h1>
+
+//           {/* Décoration Centrale */}
+//           <div className="flex items-center justify-center gap-6 my-8">
+//             <div className="line-deco h-[1px] w-16 sm:w-32 bg-gradient-to-r from-transparent to-gray-400" />
+//             <Heart className="heart-icon text-red-300 fill-red-300 w-6 h-6" />
+//             <div className="line-deco h-[1px] w-16 sm:w-32 bg-gradient-to-l from-transparent to-gray-400" />
+//           </div>
+
+//           <p className="reveal-text font-serif-premium italic text-xl sm:text-3xl text-gray-600 max-w-xl mx-auto leading-relaxed px-4">
+//             "Deux âmes, un seul cœur, un chemin qui commence..."
+//           </p>
+
+//           <p className="reveal-text font-lora text-gray-500 tracking-wide pt-4">
+//             BAFOUSSAM, BELLE VUE, 10 AVRIL 2026
+//           </p>
+//         </div>
+
+//         {/* Scroll Indicator Custom */}
+//         <div className="absolute bottom-10 flex flex-col items-center gap-2 opacity-60">
+//           <span className="font-serif-premium text-xs tracking-widest uppercase">Découvrir</span>
+//           <div className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent" />
+//         </div>
+//       </div>
+
+//       {/* Overlay Texture Papier (Subtil) */}
+//       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
+//     </section>
+//   );
+// }
+
+// export default Hero;
+
+
+
+import { motion } from 'framer-motion';
+import { Heart } from 'lucide-react';
+import './hero.css';
+
+function Hero() {
+  // Variantes pour les animations de texte (Stagger effect)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Délai entre chaque élément
+        delayChildren: 0.5,
       },
-      y: -100
-    });
+    },
+  };
 
-  }, containerRef); // 2. Lier au scope du containerRef
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: "blur(0px)",
+      transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } 
+    },
+  };
 
-  // 3. NETTOYAGE (C'est l'étape cruciale pour éviter l'erreur)
-  return () => ctx.revert(); 
-}, []);
+  const photoVariants = {
+    hidden: { opacity: 0, scale: 0.9, rotate: -2 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      rotate: 0,
+      transition: { duration: 1.8, ease: "easeOut" } 
+    },
+  };
+
   return (
-    <section
-      ref={containerRef}
-      className="relative hero min-h-screen flex items-center justify-center overflow-hidden bg-[#FAF9F6]"
+    <motion.section
+
+      initial="hidden"
+      animate="visible"
+      className="relative min-h-screen bg-[url('/img.jpg')] bg-cover bg-center flex items-center justify-center overflow-hidden"
     >
-      {/* Background : Particules Romantiques */}
-      <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
+      {/* Background : Particules Romantiques animées */}
+      <div className="absolute inset-0 pointer-events-none bg-black/80">
         {[...Array(20)].map((_, i) => (
-          <div 
-            key={i} 
-            className="particle absolute bottom-0 w-2 h-2 bg-beige-400 rounded-full blur-sm bg-orange-200/40"
+          <motion.div
+            key={i}
+            className="particle absolute w-2 h-2 bg-orange-200/40 rounded-full blur-sm"
             style={{ left: `${Math.random() * 100}%` }}
+            animate={{
+              y: [0, -1000],
+              x: [0, Math.random() * 50 - 25],
+              opacity: [0, 0.6, 0],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "linear",
+            }}
           />
         ))}
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center">
+      <motion.div 
+        variants={containerVariants}
+        className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center"
+      >
         
-        {/* Cadre Image Premium */}
-        <div className="relative group mb-12">
-          <div 
-            ref={imageRef}
-            className="relative w-64 h-80 sm:w-80 sm:h-[32rem] rounded-t-full overflow-hidden shadow-2xl border-[12px] border-white"
-          >
+        {/* Cadre Image Premium avec effet de flottement */}
+        <motion.div 
+          variants={photoVariants}
+          whileHover={{ scale: 1.02 }}
+          className="relative group mb-12"
+        >
+          <div className="relative mt-[32rem] w-64 h-80 sm:w-80 sm:h-[32rem] rounded-t-full overflow-hidden shadow-2xl border-[12px] border-white">
             <img
               src="/b1.jpeg"
               alt="Mariage"
@@ -114,48 +205,77 @@ useEffect(() => {
           </div>
           
           {/* Badge Date flottant */}
-          <div className="reveal-text absolute -bottom-6 -right-4 bg-white p-4 shadow-xl rounded-lg rotate-3">
+          <motion.div 
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="absolute -bottom-6 -right-4 bg-white p-4 shadow-xl rounded-lg rotate-3"
+          >
              <p className="font-serif-premium text-gray-800 font-bold tracking-widest text-sm uppercase">Samedi</p>
              <p className="font-serif-premium text-2xl text-amber-800">10 Avril 2026</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Titre Principal */}
-        <div ref={contentRef} className="text-center space-y-6">
-          <h2 className="reveal-text font-serif-premium text-lg tracking-[0.3em] text-gray-500 uppercase">
+        <div className="text-center space-y-6">
+          <motion.h2 variants={itemVariants} className="font-serif-premium text-lg tracking-[0.3em] text-gray-300 uppercase">
             Célébration de l'Union
-          </h2>
+          </motion.h2>
           
-          <h1 className="reveal-text font-script text-7xl sm:text-9xl text-gray-800 my-4 drop-shadow-sm">
+          <motion.h1 variants={itemVariants} className="font-script text-7xl sm:text-9xl text-gray-300 my-4 drop-shadow-sm">
             Clémence <span className="text-4xl sm:text-6xl align-middle font-serif-premium italic">&</span> Elias
-          </h1>
+          </motion.h1>
 
-          {/* Décoration Centrale */}
-          <div className="flex items-center justify-center gap-6 my-8">
-            <div className="line-deco h-[1px] w-16 sm:w-32 bg-gradient-to-r from-transparent to-gray-400" />
-            <Heart className="heart-icon text-red-300 fill-red-300 w-6 h-6" />
-            <div className="line-deco h-[1px] w-16 sm:w-32 bg-gradient-to-l from-transparent to-gray-400" />
-          </div>
+          {/* Décoration Centrale animée */}
+          <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 my-8">
+            <motion.div 
+              initial={{ width: 0 }} 
+              animate={{ width: "8rem" }} 
+              transition={{ delay: 2, duration: 1.5 }}
+              className="h-[1px] bg-gradient-to-r from-transparent to-gray-400" 
+            />
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+            >
+              <Heart className="text-red-300 fill-red-300 w-6 h-6" />
+            </motion.div>
+            <motion.div 
+              initial={{ width: 0 }} 
+              animate={{ width: "8rem" }} 
+              transition={{ delay: 2, duration: 1.5 }}
+              className="h-[1px] bg-gradient-to-l from-transparent to-gray-400" 
+            />
+          </motion.div>
 
-          <p className="reveal-text font-serif-premium italic text-xl sm:text-3xl text-gray-600 max-w-xl mx-auto leading-relaxed px-4">
+          <motion.p variants={itemVariants} className="font-serif-premium italic text-xl sm:text-3xl text-gray-400 max-w-xl mx-auto leading-relaxed px-4">
             "Deux âmes, un seul cœur, un chemin qui commence..."
-          </p>
+          </motion.p>
 
-          <p className="reveal-text font-lora text-gray-500 tracking-wide pt-4">
+          <motion.p variants={itemVariants} className="font-lora text-yellow-200 tracking-wide pt-4">
             BAFOUSSAM, BELLE VUE, 10 AVRIL 2026
-          </p>
+          </motion.p>
         </div>
 
-        {/* Scroll Indicator Custom */}
-        <div className="absolute bottom-10 flex flex-col items-center gap-2 opacity-60">
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.6 }}
+          transition={{ delay: 3, duration: 1 }}
+          className="absolute bottom-10 flex flex-col items-center gap-2"
+        >
           <span className="font-serif-premium text-xs tracking-widest uppercase">Découvrir</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent" />
-        </div>
-      </div>
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent" 
+          />
+        </motion.div>
+      </motion.div>
 
-      {/* Overlay Texture Papier (Subtil) */}
+      {/* Overlay Texture Papier */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-    </section>
+    </motion.section>
   );
 }
 

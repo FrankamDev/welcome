@@ -1,17 +1,19 @@
-/*  */
 
-.hero-section {
+.hero{
+  background-image:  url('../../public/img.jpg') center/cover;
+}
+/* .hero-section {
   position: relative;
   background-color: #FAF9F6;
   perspective: 1000px;
 }
 
-/* Image de fond animée et voilée */
+
 .hero-bg-animated {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.25; /* Opacité réduite demandée */
+  opacity: 0.25; 
   filter: grayscale(20%) blur(2px);
   transform: scale(1.1);
 }
@@ -22,7 +24,7 @@
   object-fit: cover;
 }
 
-/* L'étiquette (Badge) sur la photo */
+
 .date-badge {
   background: white;
   padding: 1.2rem;
@@ -33,17 +35,17 @@
   border: 1px solid rgba(180, 140, 80, 0.1);
 }
 
-/* Texture papier luxe */
+
 .paper-overlay {
   position: absolute;
   inset: 0;
   opacity: 0.05;
   pointer-events: none;
-  background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  background-image: url('./b1.jpeg') center/cover;
   z-index: 2;
 }
 
 .image-frame {
   box-shadow: 0 30px 60px -12px rgba(0,0,0,0.25);
   border: 12px solid white;
-}
+} */

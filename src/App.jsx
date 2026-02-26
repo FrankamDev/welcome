@@ -8,6 +8,7 @@ import Details from './components/Details';
 import RSVP from './components/RSVP';
 import CouplePhoto from './components/CouplePhoto';
 
+
 function App() {
   useEffect(() => {
     // Optionnel : smooth scroll global
@@ -31,6 +32,7 @@ function App() {
         <RSVP />
         <CouplePhoto />
       </motion.div>
+    
     </div>
   );
 }
