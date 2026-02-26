@@ -82,7 +82,7 @@ function Hero() {
             className="relative w-64 h-80 sm:w-80 sm:h-[32rem] rounded-t-full overflow-hidden shadow-2xl border-[12px] border-white"
           >
             <img
-              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80"
+              src=""
               alt="Mariage"
               className="w-full h-full object-cover"
             />
