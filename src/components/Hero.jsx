@@ -10,53 +10,77 @@ function Hero() {
   const contentRef = useRef(null);
   const particlesRef = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+  // useEffect(() => {
+  //   const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    // 1. Animation des particules de fond (Bokeh)
-    gsap.to(".particle", {
-      y: "-100vh",
-      x: "random(-50, 50)",
-      opacity: "random(0.1, 0.5)",
-      duration: "random(10, 20)",
-      repeat: -1,
-      stagger: { each: 0.2, from: "random" },
-      ease: "none"
-    });
+  //   // 1. Animation des particules de fond (Bokeh)
+  //   gsap.to(".particle", {
+  //     y: "-100vh",
+  //     x: "random(-50, 50)",
+  //     opacity: "random(0.1, 0.5)",
+  //     duration: "random(10, 20)",
+  //     repeat: -1,
+  //     stagger: { each: 0.2, from: "random" },
+  //     ease: "none"
+  //   });
 
-    // 2. Révélation de l'image (Scale + Reveal)
-    tl.fromTo(imageRef.current, 
-      { clipPath: "inset(100% 0% 0% 0%)", scale: 1.2 },
-      { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 2, ease: "expo.inOut" }
+  //   // 2. Révélation de l'image (Scale + Reveal)
+  //   tl.fromTo(imageRef.current, 
+  //     { clipPath: "inset(100% 0% 0% 0%)", scale: 1.2 },
+  //     { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 2, ease: "expo.inOut" }
+  //   );
+
+  //   // 3. Entrée du texte coordonnée
+  //   tl.from(".reveal-text", {
+  //     y: 80,
+  //     opacity: 0,
+  //     rotateX: -45,
+  //     stagger: 0.2,
+  //     duration: 1.5,
+  //   }, "-=1");
+
+  //   // 4. Lignes décoratives s'étirant depuis le centre
+  //   tl.fromTo(".line-deco", 
+  //     { scaleX: 0 }, 
+  //     { scaleX: 1, duration: 1.5, stagger: 0.2 }, 
+  //     "-=1"
+  //   );
+
+  //   // 5. Pulse infini du coeur
+  //   gsap.to(".heart-icon", {
+  //     scale: 1.2,
+  //     repeat: -1,
+  //     yoyo: true,
+  //     ease: "heartbeat", // On peut simuler un battement
+  //     duration: 0.8
+  //   });
+
+  // }, []);
+useEffect(() => {
+  // 1. Créer le contexte
+  let ctx = gsap.context(() => {
+    
+    // Tout ton code GSAP doit être ICI
+    gsap.fromTo(".hero-title-name", 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
     );
 
-    // 3. Entrée du texte coordonnée
-    tl.from(".reveal-text", {
-      y: 80,
-      opacity: 0,
-      rotateX: -45,
-      stagger: 0.2,
-      duration: 1.5,
-    }, "-=1");
-
-    // 4. Lignes décoratives s'étirant depuis le centre
-    tl.fromTo(".line-deco", 
-      { scaleX: 0 }, 
-      { scaleX: 1, duration: 1.5, stagger: 0.2 }, 
-      "-=1"
-    );
-
-    // 5. Pulse infini du coeur
-    gsap.to(".heart-icon", {
-      scale: 1.2,
-      repeat: -1,
-      yoyo: true,
-      ease: "heartbeat", // On peut simuler un battement
-      duration: 0.8
+    // Même les ScrollTrigger
+    gsap.to(".photo-frame", {
+      scrollTrigger: {
+        trigger: ".photo-frame",
+        start: "top center",
+        scrub: true
+      },
+      y: -100
     });
 
-  }, []);
+  }, containerRef); // 2. Lier au scope du containerRef
 
+  // 3. NETTOYAGE (C'est l'étape cruciale pour éviter l'erreur)
+  return () => ctx.revert(); 
+}, []);
   return (
     <section
       ref={containerRef}
