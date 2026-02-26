@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Heart, Send, Sparkles } from 'lucide-react';
 import './a.css';
+import Countdown from './Countdown';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,7 +119,7 @@ export default function RSVP() {
 
         {/* Bouton de confirmation Noir & Or */}
         <motion.a
-          href="https://votre-formulaire.com"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSd7Q_1XATU-0WYoEgc0rfcI44lJ5D9mS9k7FoD-4GT2Q74_Bw/viewform?usp=preview"
           target="_blank"
           whileHover={{ scale: 1.05, y: -5 }}
           whileTap={{ scale: 0.98 }}
@@ -148,6 +149,7 @@ export default function RSVP() {
              <div key={i} className="w-1.5 h-1.5 rounded-full bg-amber-200" />
            ))}
         </div>
+        <Countdown/>
       </motion.div>
     </section>
   );
