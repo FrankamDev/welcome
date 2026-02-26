@@ -30,7 +30,7 @@ export default function CouplePhoto() {
         className="absolute inset-0 w-full h-[140%] -top-[20%]"
       >
         <img
-          src="/img.jpg"
+          src="/img2.jpg"
           alt="Clémence & Elias"
           className="w-full h-full object-cover brightness-75 contrast-110"
         />
