@@ -7,7 +7,7 @@ import Programme from './components/Programme';
 import Details from './components/Details';
 import RSVP from './components/RSVP';
 import CouplePhoto from './components/CouplePhoto';
-
+import LocalisationSection from './components/LocalisationSection';
 
 function App() {
   useEffect(() => {
@@ -29,6 +29,7 @@ function App() {
         <Hero />
         <Programme />
         <Details />
+        <LocalisationSection  />
         <RSVP />
         <CouplePhoto />
       </motion.div>
