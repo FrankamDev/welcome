@@ -65,7 +65,7 @@ export default function CouplePhoto() {
           transition={{ duration: 1.5, delay: 0.5 }}
           className="space-y-8"
         >
-          <p className="text-2xl md:text-4xl font-editorial italic leading-tight text-shadow-premium max-w-3xl mx-auto">
+          <p style={{color: 'white'}} className="text-2xl cc md:text-4xl font-editorial italic leading-tight text-shadow-premium max-w-3xl mx-auto">
             « L’amour n’est pas seulement regarder l’un vers l’autre, c’est regarder ensemble dans la même direction. »
           </p>
           

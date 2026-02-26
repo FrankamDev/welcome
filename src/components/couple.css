@@ -2,7 +2,7 @@
 .film-grain {
   position: absolute;
   inset: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  /* background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); */
   opacity: 0.1;
   pointer-events: none;
   z-index: 5;
