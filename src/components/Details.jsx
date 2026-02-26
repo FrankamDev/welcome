@@ -11,26 +11,26 @@ const details = [
   {
     icon: CalendarDays,
     title: "La Date",
-    text: "Samedi 12 Décembre 2026",
-    direction: "left", // Arrive de la gauche
+    text: "Samedi 10 Avril 2026",
+    direction: "left", 
   },
   {
     icon: Clock,
     title: "L'Instant",
     text: "Vœux à 15h00\nRéception à 19h00",
-    direction: "right", // Arrive de la droite
+    direction: "right", 
   },
   {
     icon: MapPin,
     title: "Le Lieu",
-    text: "Bafoussam, Cameroun\nDomaine des Étoiles",
-    direction: "up", // Arrive du bas
+    text: "Bafoussam, BelleVue\nDomaine des Étoiles",
+    direction: "up", 
   },
   {
     icon: Users,
     title: "Dress Code",
     text: "Chic & Élégant\nUne touche de doré",
-    direction: "down", // Arrive du haut (via scale/fade)
+    direction: "down",
   },
 ];
 
@@ -39,7 +39,7 @@ function Details() {
   const lineRef = useRef(null);
 
   useEffect(() => {
-    // Animation GSAP pour la ligne de vie
+    
     gsap.fromTo(lineRef.current,
       { scaleY: 0 },
       {

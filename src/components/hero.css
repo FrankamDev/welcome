@@ -1,47 +1,49 @@
-/* Container de la Hero - Pré-charge un fond uni pour éviter un flash blanc */
+/*  */
+
 .hero-section {
   position: relative;
-  background-color: #faf9f6; /* Couleur de fond de repli */
-  overflow: hidden; /* Important pour les animations de background */
+  background-color: #FAF9F6;
+  perspective: 1000px;
 }
 
-/* Le conteneur vidéo/image de fond */
-.hero-background-media {
+/* Image de fond animée et voilée */
+.hero-bg-animated {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* S'assure que la vidéo/image ne dépasse pas */
+  z-index: 0;
+  opacity: 0.25; /* Opacité réduite demandée */
+  filter: grayscale(20%) blur(2px);
+  transform: scale(1.1);
 }
 
-/* Styles pour la vidéo ou le GIF */
-.hero-background-media video,
-.hero-background-media img {
+.hero-bg-animated img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.8) contrast(1.1); /* Ajuste la luminosité et le contraste */
-  transform: scale(1.05); /* Petite échelle pour éviter les bords au mouvement */
 }
 
-/* Overlay pour l'opacité et la teinte */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, 
-    rgba(255, 255, 255, 0.2) 0%, /* Très léger voile blanc en haut */
-    rgba(0, 0, 0, 0.4) 30%,    /* Opacité principale noire */
-    rgba(0, 0, 0, 0.6) 100%    /* Plus opaque en bas pour le contraste avec le texte */
-  );
-  z-index: 1; /* Assure qu'il est au-dessus du média mais en dessous du contenu */
+/* L'étiquette (Badge) sur la photo */
+.date-badge {
+  background: white;
+  padding: 1.2rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 20;
+  transform-origin: center;
+  border: 1px solid rgba(180, 140, 80, 0.1);
 }
 
-/* Pour le grain de film si tu veux l'ajouter ici aussi */
-.film-grain-overlay {
+/* Texture papier luxe */
+.paper-overlay {
   position: absolute;
   inset: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity: 0.1;
+  opacity: 0.05;
   pointer-events: none;
-  z-index: 2; /* Au-dessus de l'overlay principal */
+  background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  z-index: 2;
+}
+
+.image-frame {
+  box-shadow: 0 30px 60px -12px rgba(0,0,0,0.25);
+  border: 12px solid white;
 }
