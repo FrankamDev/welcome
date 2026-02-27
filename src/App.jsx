@@ -27,9 +27,9 @@ function App() {
         className="relative z-10"
       >
         <Hero />
+        <LocalisationSection  />
         <Programme />
         <Details />
-        <LocalisationSection  />
         <RSVP />
         <CouplePhoto />
       </motion.div>

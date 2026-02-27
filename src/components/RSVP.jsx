@@ -123,10 +123,10 @@ export default function RSVP() {
           target="_blank"
           whileHover={{ scale: 1.05, y: -5 }}
           whileTap={{ scale: 0.98 }}
-          className="btn-shimmer inline-flex items-center gap-4 px-12 py-6 rounded-full text-white shadow-2xl group"
+          className="btn-shimmer inline-flex items-center gap-4 px-12 py-4 rounded-[6px] text-white shadow-2xl group"
         >
           <span className="relative z-10 font-serif-premium font-bold tracking-[0.2em] uppercase text-sm sm:text-base flex items-center gap-3">
-            Confirmer ma présence
+            Confirmer ma présence 
             <Send size={18} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
           </span>
         </motion.a>

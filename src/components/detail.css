@@ -173,3 +173,16 @@
 .tracking-\[0\.2em\] {
   letter-spacing: 0.22em;
 }
+
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+.animate-twinkle { animation: twinkle 3s infinite ease-in-out; }
+.animate-twinkle.delay-500 { animation-delay: 0.5s; }
+.animate-pulse-slow { animation: pulse 12s infinite ease-in-out; }
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.08); }
+}
