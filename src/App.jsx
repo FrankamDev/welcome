@@ -8,6 +8,7 @@ import Details from './components/Details';
 import RSVP from './components/RSVP';
 import CouplePhoto from './components/CouplePhoto';
 import LocalisationSection from './components/LocalisationSection';
+import Colors from './components/Colors';
 
 function App() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
         <LocalisationSection  />
         <Programme />
         <Details />
+        <Colors/>
         <RSVP />
         <CouplePhoto />
       </motion.div>

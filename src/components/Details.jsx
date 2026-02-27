@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 const details = [
   { icon: CalendarDays, title: "La Date", text: "Samedi 10 Avril 2026" },
   { icon: Clock, title: "L'Instant", text: "Vœux à 15h00\nRéception à 19h00" },
-  { icon: MapPin, title: "Le Lieu", text: "Bafoussam, BelleVue\nDomaine des Étoiles" },
-  { icon: Users, title: "Dress Code", text: "Chic & Élégant\nUne touche de doré" },
+  { icon: MapPin, title: "Le Lieu", text: "Bafoussam, BelleVue\n Lieu Evennementiel" },
+  { icon: Users, title: "Dress Code", text: "Chic & Élégant\nUne touche de Vert Citron" },
 ];
 
 const TimelineItem = ({ detail, index }) => {
