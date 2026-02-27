@@ -105,7 +105,7 @@ export default function CouplePhoto() {
   >
     <div
       className="w-full h-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/img2.jpg')" }}
+      style={{ backgroundImage: "url('/cool.jpg')" }}
     />
     <div className="absolute inset-0 bg-black/50" />
     <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
