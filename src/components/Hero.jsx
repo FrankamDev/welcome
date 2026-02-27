@@ -160,7 +160,7 @@ function Hero() {
 
       initial="hidden"
       animate="visible"
-      className="relative min-h-screen bg-[url('/img.jpg')] bg-cover bg-center flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen bg-[url('/cool1.jpg')] bg-cover bg-center flex items-center justify-center overflow-hidden"
     >
       {/* Background : Particules Romantiques animées */}
       <div className="absolute inset-0 pointer-events-none bg-black/80">
