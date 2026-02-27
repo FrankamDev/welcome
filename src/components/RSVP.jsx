@@ -97,25 +97,25 @@ export default function RSVP() {
         className="rsvp-card relative z-10 w-full max-w-2xl p-8 sm:p-20 rounded-[3rem] text-center"
       >
         <motion.p 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="font-serif-premium text-xl sm:text-3xl text-gray-800 leading-relaxed mb-12 italic"
-        >
-          {message.split("").map((char, i) => (
-            <motion.span
-              key={i}
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0 }
-              }}
-              transition={{ delay: i * 0.03 }}
-              className="letter-span"
-            >
-              {char === "\n" ? <br /> : char}
-            </motion.span>
-          ))}
-        </motion.p>
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="font-serif-premium text-xl sm:text-3xl text-gray-800 leading-relaxed mb-12 italic"
+>
+  {message.split(" ").map((word, i) => (
+    <motion.span
+      key={i}
+      variants={{
+        hidden: { opacity: 0, y: 10 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      transition={{ delay: i * 0.03 }}
+      className="inline-block"
+    >
+      {word}&nbsp;
+    </motion.span>
+  ))}
+</motion.p>
 
         {/* Bouton de confirmation Noir & Or */}
         <motion.a
