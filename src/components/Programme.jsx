@@ -24,7 +24,7 @@ const events = [
   { 
     time: "10:00", 
     title: "Mairie", 
-    desc: "Derniers préparatifs des mariés dans les salons privés, coiffure, maquillage et mise en place des accessoires.", 
+    desc: "Célébration de l’union civile à la mairie, moment solennel marqué par l’échange des consentements et la signature officielle.", 
     direction: "right" 
   },
   { 
