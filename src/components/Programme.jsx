@@ -23,7 +23,7 @@ const events = [
   },
   { 
     time: "10:00", 
-    title: "Préparation des Mariés", 
+    title: "Marie", 
     desc: "Derniers préparatifs des mariés dans les salons privés, coiffure, maquillage et mise en place des accessoires.", 
     direction: "right" 
   },
