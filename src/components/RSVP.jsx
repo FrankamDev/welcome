@@ -120,8 +120,7 @@ export default function RSVP() {
         {/* Bouton de confirmation Noir & Or */}
 
 
-        <h1>ok</h1>
-        <h3>mais je ne sais pas comment cest possible</h3>
+        
         <motion.a
           href="https://docs.google.com/forms/d/e/1FAIpQLSek_vOcfDBKhKOx4HSg4jVJcoDoa9U87Fo4DoM3GnKORtQdXA/viewform?usp=publish-editor/"
           target="_blank"
