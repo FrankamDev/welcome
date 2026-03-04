@@ -119,7 +119,7 @@ export default function RSVP() {
 
         {/* Bouton de confirmation Noir & Or */}
         <motion.a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSd7Q_1XATU-0WYoEgc0rfcI44lJ5D9mS9k7FoD-4GT2Q74_Bw/viewform?usp=preview"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSek_vOcfDBKhKOx4HSg4jVJcoDoa9U87Fo4DoM3GnKORtQdXA/viewform?usp=publish-editor/"
           target="_blank"
           whileHover={{ scale: 1.05, y: -5 }}
           whileTap={{ scale: 0.98 }}
