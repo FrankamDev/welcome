@@ -1,33 +1,38 @@
+
+
+
 // import { useState, useEffect } from 'react';
 // import { motion, AnimatePresence } from 'framer-motion';
 // import './count.css';
 
+// const targetDate = new Date('2026-04-10T00:00:00');
+
+// const calculateTimeLeft = () => {
+//   const difference = +targetDate - +new Date();
+//   let timeLeft = {};
+
+//   if (difference > 0) {
+//     timeLeft = {
+//       jours: Math.floor(difference / (1000 * 60 * 60 * 24)),
+//       heures: Math.floor((difference / (1000 * 60 * 60)) % 24),
+//       minutes: Math.floor((difference / 1000 / 60) % 60),
+//       secondes: Math.floor((difference / 1000) % 60),
+//     };
+//   }
+
+//   return timeLeft;
+// };
+
 // const Countdown = () => {
-//     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-//   const targetDate = new Date('2026-04-10T00:00:00'); // Mariage le 10 Avril
+//   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-//   const calculateTimeLeft = () => {
-//       const difference = +targetDate - +new Date();
-//       useEffect(() => {
-//         const timer = setInterval(() => {
-//           setTimeLeft(calculateTimeLeft());
-//         }, 1000);
-//         return () => clearInterval(timer);
-//       }, []);
-//     let timeLeft = {};
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setTimeLeft(calculateTimeLeft());
+//     }, 1000);
 
-//     if (difference > 0) {
-//       timeLeft = {
-//         jours: Math.floor(difference / (1000 * 60 * 60 * 24)),
-//         heures: Math.floor((difference / (1000 * 60 * 60)) % 24),
-//         minutes: Math.floor((difference / 1000 / 60) % 60),
-//         secondes: Math.floor((difference / 1000) % 60),
-//       };
-//     }
-//     return timeLeft;
-//   };
-
-
+//     return () => clearInterval(timer);
+//   }, []);
 
 //   const TimeUnit = ({ value, label }) => (
 //     <div className="flex flex-col items-center">
@@ -54,33 +59,31 @@
 //   return (
 //     <section className="countdown-container py-24 px-6 overflow-hidden">
 //       <div className="max-w-4xl mx-auto text-center">
-        
-//         {/* En-tête avec trait doré */}
-//         <motion.div 
+//         <motion.div
 //           initial={{ opacity: 0, y: 20 }}
 //           whileInView={{ opacity: 1, y: 0 }}
 //           viewport={{ once: true }}
 //           className="mb-16"
 //         >
-//           <span className="font-script text-4xl text-amber-800/60 block mb-2">Chaque seconde nous rapproche...</span>
+//           <span className="font-script text-4xl text-amber-800/60 block mb-2">
+//             Chaque seconde nous rapproche...
+//           </span>
 //           <h2 className="font-serif-premium text-2xl sm:text-4xl text-gray-800 tracking-tight">
 //             Le Grand Jour
 //           </h2>
 //           <div className="w-16 h-[1px] bg-amber-300 mx-auto mt-6" />
 //         </motion.div>
 
-//         {/* Grille du Compte à Rebours */}
 //         <div className="flex justify-center items-center gap-2 sm:gap-6">
-//           <TimeUnit value={timeLeft.jours} label="Jours" />
+//           <TimeUnit value={timeLeft.jours || 0} label="Jours" />
 //           <div className="separator-dot mb-8 text-amber-400 text-xl font-serif">•</div>
-//           <TimeUnit value={timeLeft.heures} label="Heures" />
+//           <TimeUnit value={timeLeft.heures || 0} label="Heures" />
 //           <div className="separator-dot mb-8 text-amber-400 text-xl font-serif">•</div>
-//           <TimeUnit value={timeLeft.minutes} label="Min" />
+//           <TimeUnit value={timeLeft.minutes || 0} label="Min" />
 //           <div className="separator-dot mb-8 text-amber-400 text-xl font-serif">•</div>
-//           <TimeUnit value={timeLeft.secondes} label="Sec" />
+//           <TimeUnit value={timeLeft.secondes || 0} label="Sec" />
 //         </div>
 
-//         {/* Phrase finale subtile */}
 //         <motion.div
 //           initial={{ opacity: 0 }}
 //           whileInView={{ opacity: 1 }}
@@ -91,13 +94,15 @@
 //             Bafoussam vous attend pour une célébration inoubliable.
 //           </p>
 //         </motion.div>
-
 //       </div>
 //     </section>
 //   );
 // };
 
 // export default Countdown;
+
+
+
 
 
 

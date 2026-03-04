@@ -8,7 +8,7 @@
 // gsap.registerPlugin(ScrollTrigger);
 
 // const details = [
-//   { icon: CalendarDays, title: "La Date", text: "Samedi 10 Avril 2026" },
+//   { icon: CalendarDays, title: "La Date", text: "Samedi 11 Avril 2026" },
 //   { icon: Clock, title: "L'Instant", text: "Vœux à 15h00\nRéception à 19h00" },
 //   { icon: MapPin, title: "Le Lieu", text: "Bafoussam, BelleVue\n Lieu Evennementiel" },
 //   { icon: Users, title: "Dress Code", text: "Chic & Élégant\nUne touche de Vert Citron" },
@@ -262,12 +262,6 @@
 
 
 
-
-
-
-
-
-// components/Details.jsx
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -277,10 +271,10 @@ import { CalendarDays, Clock, MapPin, Users, Sparkles, Heart } from 'lucide-reac
 gsap.registerPlugin(ScrollTrigger);
 
 const details = [
-  { icon: CalendarDays, title: "La Date", text: "Samedi 10 Avril 2026" },
-  { icon: Clock, title: "L'Instant", text: "Vœux à 15h00\nRéception à 19h00" },
+  { icon: CalendarDays, title: "La Date", text: "Samedi 11 Avril 2026" },
+  { icon: Clock, title: "L'Instant", text: "Mairie 10h00\nBénédiction 15h00" },
   { icon: MapPin, title: "Le Lieu", text: "Bafoussam, BelleVue\n Lieu Evennementiel" },
-  { icon: Users, title: "Dress Code", text: "Chic & Élégant\nUne touche de Vert Citron" },
+  { icon: Users, title: "Dress Code", text: "Chic & Élégant | Glamour\nUne touche de Vert sauge" },
 ];
 
 const TimelineItem = ({ detail, index }) => {
@@ -477,8 +471,8 @@ export default function Details() {
   className="text-7xl sm:text-8xl lg:text-9xl text-gray-900 drop-shadow-sm"
   style={{ 
     fontFamily: "'Great Vibes', cursive",
-    fontWeight: 400, // Les polices script ne supportent souvent qu'un seul poids
-    paddingBottom: "20px" // Pour éviter que les boucles de lettres soient coupées
+    fontWeight: 400, 
+    paddingBottom: "20px" 
   }}
 >
   Détails

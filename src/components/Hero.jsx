@@ -1,65 +1,83 @@
 
 
-// import { useEffect, useRef } from 'react';
-// import gsap from 'gsap';
+// import { motion } from 'framer-motion';
 // import { Heart } from 'lucide-react';
-// import './hero.css'
+// import './hero.css';
+
 // function Hero() {
-//   const containerRef = useRef(null);
-//   const imageRef = useRef(null);
-//   const contentRef = useRef(null);
-//   const particlesRef = useRef(null);
-
-  
-// useEffect(() => {
-//   // 1. Créer le contexte
-//   let ctx = gsap.context(() => {
-    
-//     // Tout ton code GSAP doit être ICI
-//     gsap.fromTo(".hero-title-name", 
-//       { opacity: 0, y: 50 },
-//       { opacity: 1, y: 0, duration: 1 }
-//     );
-
-//     // Même les ScrollTrigger
-//     gsap.to(".photo-frame", {
-//       scrollTrigger: {
-//         trigger: ".photo-frame",
-//         start: "top center",
-//         scrub: true
+//   // Variantes pour les animations de texte (Stagger effect)
+//   const containerVariants = {
+//     hidden: { opacity: 0 },
+//     visible: {
+//       opacity: 1,
+//       transition: {
+//         staggerChildren: 0.3, // Délai entre chaque élément
+//         delayChildren: 0.5,
 //       },
-//       y: -100
-//     });
+//     },
+//   };
 
-//   }, containerRef); 
+//   const itemVariants = {
+//     hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+//     visible: { 
+//       opacity: 1, 
+//       y: 0, 
+//       filter: "blur(0px)",
+//       transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } 
+//     },
+//   };
 
+//   const photoVariants = {
+//     hidden: { opacity: 0, scale: 0.9, rotate: -2 },
+//     visible: { 
+//       opacity: 1, 
+//       scale: 1, 
+//       rotate: 0,
+//       transition: { duration: 1.8, ease: "easeOut" } 
+//     },
+//   };
 
-//   return () => ctx.revert(); 
-// }, []);
 //   return (
-//     <section
-//       ref={containerRef}
-//       className="relative hero min-h-screen flex items-center justify-center overflow-hidden bg-[#FAF9F6]"
+//     <motion.section
+
+//       initial="hidden"
+//       animate="visible"
+//       className="relative min-h-screen bg-[url('/cool1.jpg')] bg-cover bg-center flex items-center justify-center overflow-hidden"
 //     >
-   
-//       <div ref={particlesRef} className="absolute inset-0 pointer-events-none">
+//       {/* Background : Particules Romantiques animées */}
+//       <div className="absolute inset-0 pointer-events-none bg-black/80">
 //         {[...Array(20)].map((_, i) => (
-//           <div 
-//             key={i} 
-//             className="particle absolute bottom-0 w-2 h-2 bg-beige-400 rounded-full blur-sm bg-orange-200/40"
+//           <motion.div
+//             key={i}
+//             className="particle absolute w-2 h-2 bg-orange-200/40 rounded-full blur-sm"
 //             style={{ left: `${Math.random() * 100}%` }}
+//             animate={{
+//               y: [0, -1000],
+//               x: [0, Math.random() * 50 - 25],
+//               opacity: [0, 0.6, 0],
+//             }}
+//             transition={{
+//               duration: Math.random() * 10 + 10,
+//               repeat: Infinity,
+//               delay: Math.random() * 5,
+//               ease: "linear",
+//             }}
 //           />
 //         ))}
 //       </div>
 
-//       <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center">
+//       <motion.div 
+//         variants={containerVariants}
+//         className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center"
+//       >
         
-//         {/* Cadre Image Premium */}
-//         <div className="relative group mb-12">
-//           <div 
-//             ref={imageRef}
-//             className="relative w-64 h-80 sm:w-80 sm:h-[32rem] rounded-t-full overflow-hidden shadow-2xl border-[12px] border-white"
-//           >
+//         {/* Cadre Image Premium avec effet de flottement */}
+//         <motion.div 
+//           variants={photoVariants}
+//           whileHover={{ scale: 1.02 }}
+//           className="relative group mb-12"
+//         >
+//           <div className="relative mt-[32rem] w-64 h-80 sm:w-80 sm:h-[32rem] rounded-t-full overflow-hidden shadow-2xl border-[12px] border-white">
 //             <img
 //               src="/b1.jpeg"
 //               alt="Mariage"
@@ -69,48 +87,77 @@
 //           </div>
           
 //           {/* Badge Date flottant */}
-//           <div className="reveal-text absolute -bottom-6 -right-4 bg-white p-4 shadow-xl rounded-lg rotate-3">
+//           <motion.div 
+//             initial={{ x: 20, opacity: 0 }}
+//             animate={{ x: 0, opacity: 1 }}
+//             transition={{ delay: 1.5, duration: 1 }}
+//             className="absolute -bottom-6 -right-4 bg-white p-4 shadow-xl rounded-lg rotate-3"
+//           >
 //              <p className="font-serif-premium text-gray-800 font-bold tracking-widest text-sm uppercase">Samedi</p>
-//              <p className="font-serif-premium text-2xl text-amber-800">10 Avril 2026</p>
-//           </div>
-//         </div>
+//              <p className="font-serif-premium text-2xl text-amber-800">11 Avril 2026</p>
+//           </motion.div>
+//         </motion.div>
 
 //         {/* Titre Principal */}
-//         <div ref={contentRef} className="text-center space-y-6">
-//           <h2 className="reveal-text font-serif-premium text-lg tracking-[0.3em] text-gray-500 uppercase">
+//         <div className="text-center space-y-6">
+//           <motion.h2 variants={itemVariants} className="font-serif-premium text-lg tracking-[0.3em] text-gray-300 uppercase">
 //             Célébration de l'Union
-//           </h2>
+//           </motion.h2>
           
-//           <h1 className="reveal-text font-script text-7xl sm:text-9xl text-gray-800 my-4 drop-shadow-sm">
+//           <motion.h1 variants={itemVariants} className="font-script text-7xl sm:text-9xl text-gray-300 my-4 drop-shadow-sm">
 //             Clémence <span className="text-4xl sm:text-6xl align-middle font-serif-premium italic">&</span> Elias
-//           </h1>
+//           </motion.h1>
 
-//           {/* Décoration Centrale */}
-//           <div className="flex items-center justify-center gap-6 my-8">
-//             <div className="line-deco h-[1px] w-16 sm:w-32 bg-gradient-to-r from-transparent to-gray-400" />
-//             <Heart className="heart-icon text-red-300 fill-red-300 w-6 h-6" />
-//             <div className="line-deco h-[1px] w-16 sm:w-32 bg-gradient-to-l from-transparent to-gray-400" />
-//           </div>
+//           {/* Décoration Centrale animée */}
+//           <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 my-8">
+//             <motion.div 
+//               initial={{ width: 0 }} 
+//               animate={{ width: "8rem" }} 
+//               transition={{ delay: 2, duration: 1.5 }}
+//               className="h-[1px] bg-gradient-to-r from-transparent to-gray-400" 
+//             />
+//             <motion.div
+//               animate={{ scale: [1, 1.2, 1] }}
+//               transition={{ repeat: Infinity, duration: 2 }}
+//             >
+//               <Heart className="text-red-300 fill-red-300 w-6 h-6" />
+//             </motion.div>
+//             <motion.div 
+//               initial={{ width: 0 }} 
+//               animate={{ width: "8rem" }} 
+//               transition={{ delay: 2, duration: 1.5 }}
+//               className="h-[1px] bg-gradient-to-l from-transparent to-gray-400" 
+//             />
+//           </motion.div>
 
-//           <p className="reveal-text font-serif-premium italic text-xl sm:text-3xl text-gray-600 max-w-xl mx-auto leading-relaxed px-4">
+//           <motion.p variants={itemVariants} className="font-serif-premium italic text-xl sm:text-3xl text-gray-400 max-w-xl mx-auto leading-relaxed px-4">
 //             "Deux âmes, un seul cœur, un chemin qui commence..."
-//           </p>
+//           </motion.p>
 
-//           <p className="reveal-text font-lora text-gray-500 tracking-wide pt-4">
-//             BAFOUSSAM, BELLE VUE, 10 AVRIL 2026
-//           </p>
+//           <motion.p variants={itemVariants} className="font-lora text-yellow-200 tracking-wide pt-4">
+//             BAFOUSSAM, BELLE VUE, 11 AVRIL 2026
+//           </motion.p>
 //         </div>
 
-//         {/* Scroll Indicator Custom */}
-//         <div className="absolute bottom-10 flex flex-col items-center gap-2 opacity-60">
+//         {/* Scroll Indicator */}
+//         <motion.div 
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 0.6 }}
+//           transition={{ delay: 3, duration: 1 }}
+//           className="absolute bottom-10 flex flex-col items-center gap-2"
+//         >
 //           <span className="font-serif-premium text-xs tracking-widest uppercase">Découvrir</span>
-//           <div className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent" />
-//         </div>
-//       </div>
+//           <motion.div 
+//             animate={{ y: [0, 10, 0] }}
+//             transition={{ repeat: Infinity, duration: 2 }}
+//             className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent" 
+//           />
+//         </motion.div>
+//       </motion.div>
 
-//       {/* Overlay Texture Papier (Subtil) */}
+//       {/* Overlay Texture Papier */}
 //       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-//     </section>
+//     </motion.section>
 //   );
 // }
 
@@ -129,7 +176,7 @@ function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // Délai entre chaque élément
+        staggerChildren: 0.3, 
         delayChildren: 0.5,
       },
     },
@@ -160,10 +207,10 @@ function Hero() {
 
       initial="hidden"
       animate="visible"
-      className="relative min-h-screen bg-[url('/cool1.jpg')] bg-cover bg-center flex items-center justify-center overflow-hidden"
+      className="relative -mt-42 min-h-screen bg-[url('/cool1.jpg')] bg-cover bg-center flex items-center justify-center overflow-hidden"
     >
-      {/* Background : Particules Romantiques animées */}
-      <div className="absolute inset-0 pointer-events-none bg-black/80">
+      
+      <div className="absolute inset-0 pointer-events-none bg-black/60">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
@@ -189,7 +236,7 @@ function Hero() {
         className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center"
       >
         
-        {/* Cadre Image Premium avec effet de flottement */}
+        
         <motion.div 
           variants={photoVariants}
           whileHover={{ scale: 1.02 }}
@@ -204,7 +251,7 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
           </div>
           
-          {/* Badge Date flottant */}
+         
           <motion.div 
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -212,11 +259,10 @@ function Hero() {
             className="absolute -bottom-6 -right-4 bg-white p-4 shadow-xl rounded-lg rotate-3"
           >
              <p className="font-serif-premium text-gray-800 font-bold tracking-widest text-sm uppercase">Samedi</p>
-             <p className="font-serif-premium text-2xl text-amber-800">10 Avril 2026</p>
+             <p className="font-serif-premium text-2xl text-amber-800">11 Avril 2026</p>
           </motion.div>
         </motion.div>
 
-        {/* Titre Principal */}
         <div className="text-center space-y-6">
           <motion.h2 variants={itemVariants} className="font-serif-premium text-lg tracking-[0.3em] text-gray-300 uppercase">
             Célébration de l'Union
@@ -226,7 +272,7 @@ function Hero() {
             Clémence <span className="text-4xl sm:text-6xl align-middle font-serif-premium italic">&</span> Elias
           </motion.h1>
 
-          {/* Décoration Centrale animée */}
+         
           <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 my-8">
             <motion.div 
               initial={{ width: 0 }} 
@@ -253,7 +299,7 @@ function Hero() {
           </motion.p>
 
           <motion.p variants={itemVariants} className="font-lora text-yellow-200 tracking-wide pt-4">
-            BAFOUSSAM, BELLE VUE, 10 AVRIL 2026
+            BAFOUSSAM, BELLE VUE, 11 AVRIL 2026
           </motion.p>
         </div>
 
