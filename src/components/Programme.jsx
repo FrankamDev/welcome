@@ -40,7 +40,7 @@ const events = [
     direction: "down" 
   },
   { 
-    time: "15:30", 
+    time: "15:00", 
     title: "Bénédiction et Cérémonie", 
     desc: "Cérémonie officielle avec échange des vœux et bénédiction, célébrée dans la salle principale avec famille et proches.", 
     direction: "left" 
