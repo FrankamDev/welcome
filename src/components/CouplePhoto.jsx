@@ -194,7 +194,7 @@ export default function CouplePhoto() {
   {/* Side Decoration */}
   <div className="absolute bottom-12 right-12 z-20 hidden md:block">
     <p className="text-white/20 text-xs tracking-widest uppercase rotate-90 origin-right">
-      Célébration à Bafoussam
+      Célébration à Bafoussam jjjjjjjjjjjjjjj
     </p>
   </div>
 </motion.section>
