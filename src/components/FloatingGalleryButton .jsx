@@ -247,6 +247,7 @@ export default function FloatingGalleryButton() {
             className="text-amber-700 group-hover:text-amber-800 transition-colors"
             strokeWidth={1.8}
           />
+          
         )}
 
         <motion.span
