@@ -1,25 +1,21 @@
-// src/App.tsx
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Heart, Calendar, MapPin, Clock } from 'lucide-react';
-import Hero from './components/Hero';
-import Programme from './components/Programme';
-import Details from './components/Details';
-import RSVP from './components/RSVP';
-import CouplePhoto from './components/CouplePhoto';
-import LocalisationSection from './components/LocalisationSection';
-import Colors from './components/Colors';
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { motion } from "framer-motion";
 
-function App() {
-  useEffect(() => {
-    // Optionnel : smooth scroll global
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, []);
+import Hero from "./components/Hero";
+import Programme from "./components/Programme";
+import Details from "./components/Details";
+import RSVP from "./components/RSVP";
+import CouplePhoto from "./components/CouplePhoto";
+import LocalisationSection from "./components/LocalisationSection";
+import Colors from "./components/Colors";
+import Gallery from "./components/Gallery";
+import FloatingGalleryButton from "./components/FloatingGalleryButton ";
 
+function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-50 text-gray-800 font-lora overflow-x-hidden">
-      {/* Overlay subtil pour ambiance */}
-      <div className="fixed inset-0 pointer-events-none bg-[url('https://images.unsplash.com/photo-1519741497674-...')] opacity-5 bg-cover bg-center mix-blend-overlay"></div>
+      <div className="fixed inset-0 pointer-events-none bg-[url('https://images.unsplash.com/photo-1519741497674-...')] opacity-5 bg-cover bg-center mix-blend-overlay" />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -28,15 +24,30 @@ function App() {
         className="relative z-10"
       >
         <Hero />
-        <LocalisationSection  />
+        <LocalisationSection />
         <Programme />
         <Details />
-        <Colors/>
+        <Colors />
         <RSVP />
         <CouplePhoto />
       </motion.div>
-    
     </div>
+  );
+}
+
+function App() {
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+  }, []);
+
+  return (
+    <BrowserRouter>
+     <FloatingGalleryButton />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
