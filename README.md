@@ -1,16 +1,175 @@
-# React + Vite
+# 💍 Elegant Wedding Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, elegant, and fully responsive wedding invitation website built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Framer Motion**.
 
-Currently, two official plugins are available:
+Designed to provide guests with all the essential wedding information in a beautiful and memorable experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎉 Elegant landing page
+- 💖 Animated hero section
+- 📅 Wedding schedule
+- 📍 Venue & Google Maps integration
+- 🖼️ Photo gallery with LightGallery
+- 🎨 Beautiful responsive design
+- 💌 RSVP section
+- ❤️ Couple presentation
+- 📱 Mobile-first experience
+- ⚡ Smooth animations with Framer Motion
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
+- LightGallery
+- Lucide React
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/wedding-website.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── components/
+├── assets/
+├── pages/
+├── styles/
+├── App.tsx
+└── main.tsx
+```
+
+---
+
+## 📸 Gallery
+
+The gallery is powered by **LightGallery**, offering:
+
+- Zoom
+- Fullscreen
+- Autoplay
+- Thumbnail navigation
+- Rotation
+- Image sharing
+
+---
+
+## 🎨 Customization
+
+You can easily customize:
+
+- Couple names
+- Wedding date
+- Ceremony location
+- Photo gallery
+- Colors
+- Fonts
+- Background images
+- Music
+- RSVP information
+
+---
+
+## 📱 Responsive Design
+
+Optimized for:
+
+- Desktop
+- Tablet
+- Mobile devices
+
+---
+
+## 🚀 Performance
+
+- Fast loading
+- Lazy loading
+- Optimized assets
+- Responsive images
+- Smooth animations
+
+---
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Frank Kamgang**
+
+Full Stack Web Developer & UI Designer
+
+Portfolio:
+👉 https://online.getomiie.com
+
+GitHub:
+👉 https://github.com/FrankamDev
+
+LinkedIn:
+👉 https://www.linkedin.com/in/frank-kamgang
+
+Nexora:
+👉 https://www.nexora.getomiie.com
+
+---
+
+## 💼 Need a custom website?
+
+I design and develop:
+
+- Wedding websites
+- Business websites
+- Landing pages
+- SaaS applications
+- E-commerce platforms
+- Portfolio websites
+- Custom web applications
+
+Feel free to contact me through my portfolio:
+
+👉 https://online.getomiie.com
